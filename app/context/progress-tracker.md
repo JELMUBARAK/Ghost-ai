@@ -22,6 +22,7 @@ Update this file whenever the current phase, active feature, or implementation s
   - `components/editor/project-sidebar.tsx`: fixed floating overlay below the navbar, slides in from the left (translate, no layout push), `inert` when closed; props `isOpen`, `onClose`. Tabs "My Projects"/"Shared" with empty states; full-width `New Project` button (no handler yet).
   - `components/editor/editor-dialog.tsx`: `EditorDialog` pattern (title, description, body, footer actions) wrapping shadcn `Dialog` with project tokens and `rounded-3xl`. No concrete dialogs built.
   - `components/editor/editor-shell.tsx`: client shell owning sidebar open state; composes navbar, sidebar, and a `main` slot for page content.
+  - Closing the project sidebar restores focus to the navbar toggle via a button ref owned by `EditorShell`.
   - `app/editor/layout.tsx` (server) wraps `/editor` routes in `EditorShell`; `app/editor/page.tsx` is a placeholder canvas.
   - Verified: `tsc --noEmit` clean, `eslint` clean, `next build` passes with `/editor` route.
 
